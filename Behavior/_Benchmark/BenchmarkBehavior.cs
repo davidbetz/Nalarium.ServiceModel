@@ -1,14 +1,17 @@
 ﻿#region Copyright
+
 //+ Nalarium Pro 3.0 - Core Module
 //+ Copyright © Jampad Technology, Inc. 2008-2010
+
 #endregion
+
 using System;
 using System.Collections.ObjectModel;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
-//+
+
 namespace Nalarium.ServiceModel.Behavior
 {
     /// <summary>
@@ -19,6 +22,9 @@ namespace Nalarium.ServiceModel.Behavior
     {
         //+ IOperationBehavior
         //- @AddBindingParameters -//
+
+        #region IOperationBehavior Members
+
         public void AddBindingParameters(OperationDescription operationDescription, BindingParameterCollection bindingParameters)
         {
             //+ blank
@@ -42,8 +48,13 @@ namespace Nalarium.ServiceModel.Behavior
             //+ blank
         }
 
+        #endregion
+
         //+ IServiceBehavior
         //- @AddBindingParameters -//
+
+        #region IServiceBehavior Members
+
         public void AddBindingParameters(ServiceDescription serviceDescription, ServiceHostBase serviceHostBase, Collection<ServiceEndpoint> endpoints, BindingParameterCollection bindingParameters)
         {
             //+ blank
@@ -66,5 +77,7 @@ namespace Nalarium.ServiceModel.Behavior
         {
             //+ blank
         }
+
+        #endregion
     }
 }

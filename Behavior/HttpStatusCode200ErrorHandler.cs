@@ -1,11 +1,15 @@
 ﻿#region Copyright
+
 //+ Nalarium Pro 3.0 - Core Module
 //+ Copyright © Jampad Technology, Inc. 2008-2010
+
 #endregion
+
 using System;
+using System.Net;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Dispatcher;
-//+
+
 namespace Nalarium.ServiceModel.Behavior
 {
     /// <summary>
@@ -14,7 +18,6 @@ namespace Nalarium.ServiceModel.Behavior
     public class HttpStatusCode200ErrorHandler : IErrorHandler
     {
         //- @ServiceType -//
-        public Type ServiceType { get; set; }
 
         //+
         //- @Ctor -//
@@ -23,8 +26,13 @@ namespace Nalarium.ServiceModel.Behavior
             ServiceType = serviceType;
         }
 
+        public Type ServiceType { get; set; }
+
         //+
         //- @HandleError -//
+
+        #region IErrorHandler Members
+
         public bool HandleError(Exception error)
         {
             return false;
@@ -34,9 +42,11 @@ namespace Nalarium.ServiceModel.Behavior
         public virtual void ProvideFault(Exception error, MessageVersion version, ref Message fault)
         {
             fault.Properties[HttpResponseMessageProperty.Name] = new HttpResponseMessageProperty
-            {
-                StatusCode = System.Net.HttpStatusCode.OK
-            };
+                                                                 {
+                                                                     StatusCode = HttpStatusCode.OK
+                                                                 };
         }
+
+        #endregion
     }
 }

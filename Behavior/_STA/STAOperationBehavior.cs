@@ -1,17 +1,24 @@
 ﻿#region Copyright
+
 //+ Nalarium Pro 3.0 - Core Module
 //+ Copyright © Jampad Technology, Inc. 2008-2010
+
 #endregion
+
 using System;
+using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
-//+
+
 namespace Nalarium.ServiceModel.Behavior
 {
     public class STAOperationBehavior : Attribute, IOperationBehavior
     {
         //- @AddBindingParameters -//
-        public void AddBindingParameters(OperationDescription operationDescription, System.ServiceModel.Channels.BindingParameterCollection bindingParameters)
+
+        #region IOperationBehavior Members
+
+        public void AddBindingParameters(OperationDescription operationDescription, BindingParameterCollection bindingParameters)
         {
             //+ blank
         }
@@ -33,5 +40,7 @@ namespace Nalarium.ServiceModel.Behavior
         {
             //+ blank
         }
+
+        #endregion
     }
 }

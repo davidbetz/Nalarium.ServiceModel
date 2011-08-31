@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
-//+
+
 [assembly: CLSCompliant(true)]
 [assembly: AssemblyTitle("Nalarium Pro 3.0 - Core Module (WCF)")]
 [assembly: AssemblyDescription(".NET Development Foundation")]
@@ -12,10 +12,13 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 //+
+
 [assembly: ComVisible(false)]
 //+
+
 [assembly: Guid("093C5AC4-0780-4074-9365-3F67EF644580")]
 //+
+
 [assembly: AssemblyVersion("3.0.0.0")]
 [assembly: AssemblyFileVersion("3.0.0.0")]
 
@@ -24,6 +27,6 @@ namespace Nalarium.ServiceModel
     [NotDocumented]
     public class AssemblyInfo
     {
-        public static String AssemblyName = typeof(Nalarium.ServiceModel.AssemblyInfo).Assembly.FullName;
+        public static String AssemblyName = typeof(AssemblyInfo).Assembly.FullName;
     }
 }

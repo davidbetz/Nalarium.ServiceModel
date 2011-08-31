@@ -1,26 +1,35 @@
 ﻿#region Copyright
+
 //+ Nalarium Pro 3.0 - Core Module
 //+ Copyright © Jampad Technology, Inc. 2008-2010
+
 #endregion
+
 using System;
+using System.ServiceModel;
 using System.ServiceModel.Dispatcher;
-//+
+using System.Threading;
+
 namespace Nalarium.ServiceModel.Behavior
 {
     public class STAInvoker : IOperationInvoker
     {
         //- $InnerOperationInvoker -//
-        private IOperationInvoker InnerOperationInvoker { get; set; }
 
         //+
         //- @Ctor -//
         public STAInvoker(IOperationInvoker operationInvoker)
         {
-            this.InnerOperationInvoker = operationInvoker;
+            InnerOperationInvoker = operationInvoker;
         }
+
+        private IOperationInvoker InnerOperationInvoker { get; set; }
 
         //+
         //- @AllocateInputs -//
+
+        #region IOperationInvoker Members
+
         public Object[] AllocateInputs()
         {
             return InnerOperationInvoker.AllocateInputs();
@@ -31,15 +40,15 @@ namespace Nalarium.ServiceModel.Behavior
         {
             Object result = null;
             Object[] staOutputs = null;
-            System.ServiceModel.OperationContext context = System.ServiceModel.OperationContext.Current;
-            System.Threading.Thread thread = new System.Threading.Thread(new System.Threading.ThreadStart(delegate
-            {
-                using (System.ServiceModel.OperationContextScope scope = new System.ServiceModel.OperationContextScope(context))
-                {
-                    result = InnerOperationInvoker.Invoke(instance, inputs, out staOutputs);
-                }
-            }));
-            thread.SetApartmentState(System.Threading.ApartmentState.STA);
+            OperationContext context = OperationContext.Current;
+            var thread = new Thread(new ThreadStart(delegate
+                                                    {
+                                                        using (var scope = new OperationContextScope(context))
+                                                        {
+                                                            result = InnerOperationInvoker.Invoke(instance, inputs, out staOutputs);
+                                                        }
+                                                    }));
+            thread.SetApartmentState(ApartmentState.STA);
             thread.Start();
             thread.Join();
             //+
@@ -63,7 +72,12 @@ namespace Nalarium.ServiceModel.Behavior
         //- @IsSynchronous -//
         public bool IsSynchronous
         {
-            get { return InnerOperationInvoker.IsSynchronous; }
+            get
+            {
+                return InnerOperationInvoker.IsSynchronous;
+            }
         }
+
+        #endregion
     }
 }
