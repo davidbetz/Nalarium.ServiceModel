@@ -3,12 +3,12 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: CLSCompliant(true)]
-[assembly: AssemblyTitle("Nalarium Pro 3.0 - Core Module (WCF)")]
+[assembly: AssemblyTitle("Jampad Technology, Inc. 2007-2013 Pro 3.0 - Core Module (WCF)")]
 [assembly: AssemblyDescription(".NET Development Foundation")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Jampad Technology, Inc.")]
-[assembly: AssemblyProduct("Nalarium Pro 3.0 - Core Module (WCF)")]
-[assembly: AssemblyCopyright("Copyright © Jampad Technology, Inc. 2008-2010")]
+[assembly: AssemblyProduct("Jampad Technology, Inc. 2007-2013 Pro 3.0 - Core Module (WCF)")]
+[assembly: AssemblyCopyright("Copyright © Jampad Technology, Inc. 2008-2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 //+
