@@ -7,7 +7,7 @@
 
 using System;
 
-namespace Nalarium.ServiceModel.Behavior
+namespace Nalarium.ServiceModel.Behavior.Benchmark
 {
     /// <summary>
     /// Used to assist in the benchmarking of async operations.

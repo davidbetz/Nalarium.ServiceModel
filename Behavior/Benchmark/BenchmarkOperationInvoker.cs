@@ -10,7 +10,7 @@ using System.Diagnostics;
 using System.ServiceModel;
 using System.ServiceModel.Dispatcher;
 
-namespace Nalarium.ServiceModel.Behavior
+namespace Nalarium.ServiceModel.Behavior.Benchmark
 {
     /// <summary>
     /// For use with BenchmarkBehavior.

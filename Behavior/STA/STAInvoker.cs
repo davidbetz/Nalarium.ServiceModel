@@ -10,7 +10,7 @@ using System.ServiceModel;
 using System.ServiceModel.Dispatcher;
 using System.Threading;
 
-namespace Nalarium.ServiceModel.Behavior
+namespace Nalarium.ServiceModel.Behavior.STA
 {
     public class STAInvoker : IOperationInvoker
     {

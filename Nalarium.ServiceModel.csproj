@@ -73,11 +73,11 @@
   <ItemGroup>
     <Compile Include="Behavior\HttpStatusCode200Behavior.cs" />
     <Compile Include="Behavior\HttpStatusCode200ErrorHandler.cs" />
-    <Compile Include="Behavior\_Benchmark\BenchmarkBehavior.cs" />
-    <Compile Include="Behavior\_Benchmark\BenchmarkOperationInvoker.cs" />
-    <Compile Include="Behavior\_Benchmark\IProvidesAsyncBenchmark.cs" />
-    <Compile Include="Behavior\_STA\STAInvoker.cs" />
-    <Compile Include="Behavior\_STA\STAOperationBehavior.cs" />
+    <Compile Include="Behavior\Benchmark\BenchmarkBehavior.cs" />
+    <Compile Include="Behavior\Benchmark\BenchmarkOperationInvoker.cs" />
+    <Compile Include="Behavior\Benchmark\IProvidesAsyncBenchmark.cs" />
+    <Compile Include="Behavior\STA\STAInvoker.cs" />
+    <Compile Include="Behavior\STA\STAOperationBehavior.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +115,6 @@
   </Target>
   -->
   <Target Name="AfterBuild">
-		<Copy SkipUnchangedFiles="true" SourceFiles="$(OutDir)\$(TargetFileName)" DestinationFiles="$(HomeDrive)\_REFERENCE\$(Configuration)\$(TargetFileName)" />
+    <Copy SkipUnchangedFiles="true" SourceFiles="$(OutDir)\$(TargetFileName)" DestinationFiles="$(HomeDrive)\_REFERENCE\$(Configuration)\$(TargetFileName)" />
   </Target>
 </Project>

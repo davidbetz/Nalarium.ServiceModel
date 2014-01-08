@@ -12,7 +12,7 @@ using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
 
-namespace Nalarium.ServiceModel.Behavior
+namespace Nalarium.ServiceModel.Behavior.Benchmark
 {
     /// <summary>
     /// Used to do simple WCF benchmarking.
